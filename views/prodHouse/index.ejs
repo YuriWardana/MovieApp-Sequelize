@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prodHouse list</title>
+</head>
+<body>
+    <h2>PRODUCTION HOUSE LIST</h2>
+    <table border='1'>
+        <tr>
+            
+            <th>Name Production House</th>
+            <th>Headquarters</th>
+        </tr>
+        <% data.forEach(e=>{ %>
+        <tr>
+            
+            <td><%= e.name_prodHouse %></td>
+            <td><%= e.headquarters %></td>
+        </tr>
+        <% }) %>
+    </table>
+    
+</body>
+</html>

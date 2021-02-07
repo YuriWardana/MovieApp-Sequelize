@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add Movies</title>
+</head>
+<body>
+    
+   
+    
+    <form action="/movies/edit/<%= newdata.id%>" method="POST">
+    <div>
+        <label for="" >Name</label><br>
+        <input type="text" name="name" value="<%= newdata.name %>"><br>
+    </div>
+    <br>
+    <div>
+        <label for="" >Released year</label><br>
+        <input type="text" name="released_year" value="<%= newdata.released_year %>"<br>
+    </div>
+    <br>
+    <div>
+        <label for="">Genre</label><br>
+        <select name="genre" id="" ><br>
+            <option value="animation" <%= newdata.genre === "animation" ? "selected" : "" %> >animation</option>
+            <option value="comedy" <%= newdata.genre === "comedy" ? "selected" : "" %>>comedy</option>
+            <option value="drama" <%= newdata.genre === "drama" ? "selected" : "" %>>drama</option>
+            <option value="horror" <%= newdata.genre === "horror" ? "selected" : "" %>>horror</option>
+            <option value="religious" <%= newdata.genre === "religious" ? "selected" : "" %>>religious</option>
+            <option value="thriller" <%= newdata.genre === "thriller" ? "selected" : "" %>>thriller </option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label for="">Production Houses</label><br>
+        <select name="ProdHouseId" id=""><br>
+            <%if(!newdata.ProdHouseId){ %>
+                <option>----select---</option>
+            <% } %>
+            <% Production.forEach(e=>{ %>
+                <%if(newdata.ProdHouseId === e.id){ %>
+                    <option value="<%= e.id %>" selected><%=e.name_prodHouse%> </option>
+                <%}else{%>
+                    <option value="<%= e.id %>"><%=e.name_prodHouse%> </option>
+                <%}%>
+            <%})%>
+        </select>
+    </div>
+    <br> 
+    <div>
+        <input type="submit" value="Submit"><br>
+    </div>
+</form>
+<br>
+</body>
+</html>

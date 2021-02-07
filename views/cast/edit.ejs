@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add cast</title>
+</head>
+<body>
+    <form action="/casts/edit/<%= data.id %>" method="post">
+        <div>
+            <label for="">first name</label><br>
+            <input type="text" name="first_name" value="<%= data.first_name%>"><br>
+        </div><br>
+        <div>
+            <label for="">last name</label><br>
+            <input type="text" name="last_name" value="<%= data.last_name%>"><br>
+        </div><br>
+        <div>
+            <label for="">phone number</label><br>
+            <input type="text" name="phone_number" value="<%= data.phone_number %>"><br>
+        </div><br>
+        <div>
+            <label for="">birth year</label><br>
+            <input type="number" name="birth_year" value="<%= data.birth_year%>"><br>
+        </div><br>
+        <div>
+            <label for="">gender </label><br>
+            <input type="radio" id="male" name="gender" <%= data.gender == 'male' ? 'checked' : ""%> >
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" <%= data.gender == 'female' ? 'checked' : ""%> >
+            <label for="female">Female</label><br>
+        </div>
+        <div>
+            <input type="submit" value="submit">
+        </div>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>movie List</title>
+</head>
+<body>
+    <h2>MOVIE LIST</h2>
+    <a href="/movies/add">add movies</a>
+    <br>
+    <table border="1">
+        <tr>
+            
+            <th>name</th>
+            <th>released_year</th>
+            <th>genre</th>
+            <th>ProdHouseID</th>
+            <th>Action</th>
+        </tr>
+        <% data.forEach(e=>{  %>
+        <tr>
+            
+            <td><%= e.name %></td>
+            <td><%= e.released_year %></td>
+            <td><%= e.genre %></td>
+            <td><%= !e.ProductionHouse ? 'unknown' : e.ProductionHouse.name_prodHouse %></td>
+            <td><a href="/movies/edit/<%= e.id %>">edit</a>||<a href="/movies/delete/<%= e.id %>">delete</a>||<a href="/movies/addCast/<%= e.id %>">add cast</a></td>
+        <% }) %>
+    </tr>
+    </table> 
+    
+</body>
+</html>

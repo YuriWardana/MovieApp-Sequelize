@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Cast</title>
+</head>
+<body>
+    <h2>CAST LIST</h2>
+<a href="/casts/add">add cast</a>
+<table border="1">
+    <tr>
+        <th>name</th>
+        <th>Birth Year</th>
+        <th>Phone Number</th>
+        <th>Gender</th>
+        <th>action</th>
+    </tr>
+    <%data.forEach(e=>{ %>
+    <tr>
+        <td><%= e.getFullName()%></td>
+        <td><%= e.birth_year%></td>
+        <td><%= e.phone_number%></td>
+        <td><%= e.gender%></td>
+        <td><a href="/casts/edit/<%= e.id %>">edit</a>||<a href="/casts/delete/<%= e.id %>" onclick="return confirm('are you sure to delete this data?')">delete</a>||<a href="/casts/movies/<%= e.id %>">see movies</a></td>
+
+    <%})%>
+    </tr>
+</table>
+
+    
+</body>
+</html>

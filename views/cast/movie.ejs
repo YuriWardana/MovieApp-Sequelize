@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p><%=data.getFullName()%></p>
+    <%= console.log(data.Movies[0].name)%>
+
+    <table border="1">
+    <tr>
+        <th>Movie</th>
+        <th>Released Year</th>
+        <th>Age when Movie Released</th>
+        <th>role</th>
+    </tr>
+    <% for(let i = 0; i < data.Movies.length; i++){ %>
+    <tr>
+        <td><%= data.Movies[i].name%></td>
+        <td><%= data.Movies[i].released_year%></td>
+        <td><%= getAge(data.Movies[i].released_year,data.birth_year)%></td>
+        <td><%= data.Movies[i].MovieCast.role%></td>
+    <% } %>
+    </tr>
+    </table>
+</body>
+</html>
